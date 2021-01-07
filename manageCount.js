@@ -1,12 +1,5 @@
 window.addEventListener("load", () => {
-
-    const addBtn = document.getElementById("add")
-    const subtractBtn = document.getElementById("subtract")
-    const clearBtn = document.getElementById("clear")
     const display = document.getElementById("count")
-
-
-
     let count = localStorage.getItem("counted")
     
     if(count !== null){
@@ -16,29 +9,44 @@ window.addEventListener("load", () => {
         display.innerHTML = "Count: " + count
     }
     
-    
+    window.addEventListener("click", (e) => {
+        let clickedItem = e.target
 
-    addBtn.addEventListener("click", () => {
+        switch(clickedItem.id){
+            case "add":
+                add()
+                break;
+            case "subtract":
+                subtract()
+                break;
+            case "clear":
+                clear()
+                break;
+        }
+    })
+
+    const add = () => {
         count++
         localStorage.setItem("counted", count)
         console.log(localStorage)
-        display.innerHTML = "Count: " + count
-    })
+        display.innerHTML = "Count: " + count  
+    }
 
-    subtractBtn.addEventListener("click", () => {
+    const subtract = () => {
         count = parseInt(localStorage.getItem("counted"))
         count--
         localStorage.setItem("counted", count)
 
         console.log(localStorage)
         display.innerHTML = "Count: " + count
-    })
+    }
 
-
-    clearBtn.addEventListener("click", () => {
+    const clear = () => {
         localStorage.setItem("counted", 0)
         count = localStorage.getItem("counted")
         console.log(localStorage)
         display.innerHTML = "Count: " + count
-    })
+    }
+
+
 })
