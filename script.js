@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
 
     const addBtn = document.getElementById("add")
-    const getBtn = document.getElementById("get")
+    const subtractBtn = document.getElementById("subtract")
     const clearBtn = document.getElementById("clear")
     const display = document.getElementById("count")
 
@@ -25,9 +25,12 @@ window.addEventListener("load", () => {
         display.innerHTML = "Count: " + count
     })
 
-    getBtn.addEventListener("click", () => {
-        count = localStorage.getItem("counted")
-        console.log("our value from LS", count)
+    subtractBtn.addEventListener("click", () => {
+        count = parseInt(localStorage.getItem("counted"))
+        count--
+        localStorage.setItem("counted", count)
+
+        console.log(localStorage)
         display.innerHTML = "Count: " + count
     })
 
@@ -35,6 +38,7 @@ window.addEventListener("load", () => {
     clearBtn.addEventListener("click", () => {
         localStorage.setItem("counted", 0)
         count = localStorage.getItem("counted")
+        console.log(localStorage)
         display.innerHTML = "Count: " + count
     })
 })

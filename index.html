@@ -9,10 +9,20 @@
 </head>
 <body>
     <div id="main" style="margin:40vh;">
-        <p id="count">Count: 0</p>
-        <button style="margin:5px;" type="button" class="btn btn-primary" id="add">Add to count</button>
-        <button style="margin:5px;" type="button" class="btn btn-primary" id="get">get count</button>
-        <button style="margin:5px;" type="button" class="btn btn-primary" id="clear">clear count</button>
+     
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 id="count" class="card-title">Count:</h5>
+              <h6 class="card-subtitle mb-2 text-muted">via LocalStorage</h6>
+              <p class="card-text" >Each click is logged in the console</p>
+            </div>
+          </div>
+
+
+
+        <button style="margin:5px;" type="button" class="btn btn-primary" id="add">Add to Count</button>
+        <button style="margin:5px;" type="button" class="btn btn-primary" id="subtract">Subtract from Count</button>
+        <button style="margin:5px;" type="button" class="btn btn-primary" id="clear">Clear Count</button>
     
     </div>
   
