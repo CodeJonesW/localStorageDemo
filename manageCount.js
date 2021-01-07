@@ -22,6 +22,9 @@ window.addEventListener("load", () => {
             case "clear":
                 clear()
                 break;
+            case "array":
+                arrayExample()
+                break;
         }
     })
 
@@ -46,5 +49,17 @@ window.addEventListener("load", () => {
         count = localStorage.getItem("counted")
         console.log(localStorage)
         display.innerHTML = "Count: " + count
+    }
+
+    const arrayExample = () => {
+        localStorage.setItem("myArray", JSON.stringify([1,2,3]))
+
+        console.log(localStorage)
+
+        let newArray = JSON.parse(localStorage.getItem("myArray"))
+        console.log(typeof newArray)
+        let newArrayElement = document.getElementById("newArray")
+        newArrayElement.innerHTML = newArray
+
     }
 })
