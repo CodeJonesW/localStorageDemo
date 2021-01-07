@@ -47,6 +47,4 @@ window.addEventListener("load", () => {
         console.log(localStorage)
         display.innerHTML = "Count: " + count
     }
-
-
 })
